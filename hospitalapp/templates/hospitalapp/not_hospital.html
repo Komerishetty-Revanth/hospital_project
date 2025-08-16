@@ -1,0 +1,9 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h2 class="text-danger">Access Denied</h2>
+    <p>You must be logged in as a hospital to add blood information.</p>
+    <a href="{% url 'home' %}" class="btn btn-primary mt-3">Go to Home</a>
+</div>
+{% endblock %}

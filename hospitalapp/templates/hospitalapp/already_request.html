@@ -1,0 +1,9 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h2 class="text-warning">Already Requested</h2>
+    <p>You have already requested the blood sample: <strong>{{ sample.blood_sample }}</strong>.</p>
+    <a href="{% url 'available_samples' %}" class="btn btn-primary mt-3">Back to Samples</a>
+</div>
+{% endblock %}

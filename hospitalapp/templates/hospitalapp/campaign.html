@@ -1,0 +1,31 @@
+{% extends 'hospitalapp/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Donation Campaigns</title>
+</head>
+<body>
+    <h1>Blood Donation Campaigns</h1>
+    <a href="{% url 'campaign_create' %}">Create Campaign</a>
+
+    {% if Campaigns %}
+        <ul>
+            {% for campaign in Campaigns %}
+                <li>
+                    <a href="{% url 'campaign_detail' campaign.id %}">
+                        {{ campaign.name }} - {{ campaign.location }} ({{ campaign.start_date }} to {{ campaign.end_date }})
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No campaigns available.</p>
+    {% endif %}
+</body>
+</html>
+
+
+{% endblock %}

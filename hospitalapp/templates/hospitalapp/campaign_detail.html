@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ campaign.name }}</title>
+</head>
+<body>
+    <h1>{{ campaign.name }}</h1>
+    <p><strong>Hospital:</strong> {{ campaign.hospital.name }}</p>
+    <p><strong>Description:</strong> {{ campaign.description }}</p>
+    <p><strong>Location:</strong> {{ campaign.location }}</p>
+    <p><strong>Start Date:</strong> {{ campaign.start_date }}</p>
+    <p><strong>End Date:</strong> {{ campaign.end_date }}</p>
+
+    <a href="{% url 'campaign_list' %}">Back to Campaigns</a>
+</body>
+</html>

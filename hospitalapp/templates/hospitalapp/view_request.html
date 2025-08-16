@@ -1,0 +1,33 @@
+
+<h2>Blood Sample Requests</h2>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Blood Type</th>
+        <th>Requested By</th>
+        <th>Contact</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    {% for req in request %}
+    <tr>
+        <td>{{ req.blood_sample.blood_type }}</td>
+        <td>{{ req.receiver.username }}</td>
+        <td>{{ req.contact_info }}</td>
+        <td>{{ req.status }}</td>
+        <td>
+            {% if req.status == 'Pending' %}
+                <a href="{% url 'update_request_status' req.id 'Approved' %}">Approve</a> |
+                <a href="{% url 'update_request_status' req.id 'Rejected' %}">Reject</a>
+            {% else %}
+                -
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5">No requests yet</td>
+    </tr>
+    {% endfor %}
+</table>
+
+

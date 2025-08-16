@@ -1,0 +1,6 @@
+{{ user.username }} has been logged out successfully.
+{% block content %}
+    <h2>Logout</h2>
+    <p>{{ user.username }} has been logged out successfully.</p>
+    <a href="{% url 'login' %}">Login again</a>
+{% endblock %}
